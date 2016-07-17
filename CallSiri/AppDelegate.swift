@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Intents
+import CallSiriFramework
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +20,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         return true
     }
+    
+    func applicationDidFinishLaunching(_ application: UIApplication) {
+        let names = CallContact.allContacts().map { $0.name }
+        INVocabulary.shared().setVocabularyStrings(OrderedSet(array: names), of: .contactName)
+    }
+    
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: ([AnyObject]?) -> Void) -> Bool {
+        if let interaction = userActivity.interaction, let intent = interaction.intent as? INSendPaymentIntent, let payee = intent.payee {
+            print("Calling \(payee.displayName) \(intent.currencyAmount!.amount!)")
+        }
+        return true
+    }
+    
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -9,10 +9,40 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>CallSiriFramework.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>CallSiriIntentExtension.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>CallSiriIntentExtensionUI.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>2C2F809B1D38872000A4554D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2C2F80B61D38874C00A4554D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2CAB757B1D394DFB00D5C7B8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2CEAD0961D39946A00479625</key>
 		<dict>
 			<key>primary</key>
 			<true/>

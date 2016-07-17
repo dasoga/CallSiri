@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import CallSiriFramework
+import Intents
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        INPreferences.requestSiriAuthorization { (status) in
+            print("Siri auth: \(status.rawValue)")
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
